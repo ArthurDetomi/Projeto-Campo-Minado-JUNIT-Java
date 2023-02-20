@@ -37,6 +37,23 @@ public class Tabuleiro {
     }
 
     private void sortearMinas() {
+        long minasArmadas = 0;
 
+        do {
+            minasArmadas = campos.stream().filter(Campo::isMinado).count();
+            int aleatorio = (int) (Math.random() * campos.size());
+            campos.get(aleatorio).minar();
+        } while (minasArmadas < minas);
     }
+
+
+    public boolean objetivoAlcancado() {
+        return campos.stream().allMatch(Campo::objetivoAlcancado);
+    }
+
+    public void reiniciar() {
+        campos.forEach(Campo::reiniciar);
+        sortearMinas();
+    }
+    
 }

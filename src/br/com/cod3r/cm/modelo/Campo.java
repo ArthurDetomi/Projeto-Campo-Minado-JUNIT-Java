@@ -115,4 +115,9 @@ public class Campo {
     public int getColuna() {
         return coluna;
     }
+
+    public boolean isMinado() {
+        return minado;
+    }
+
 }
