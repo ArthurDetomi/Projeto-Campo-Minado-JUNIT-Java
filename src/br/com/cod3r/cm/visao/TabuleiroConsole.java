@@ -62,12 +62,13 @@ public class TabuleiroConsole {
 
             System.out.println("Você ganhou");
         } catch (ExplosaoException e) {
+            System.out.println(tabuleiro);
             System.out.println("Você perdeu");
         }
     }
 
     private String capturarValorDigitado(String texto) {
-        System.out.print(texto);
+        System.out.println(texto);
         String digitado = entrada.nextLine();
 
         if ("sair".equalsIgnoreCase(digitado)) {

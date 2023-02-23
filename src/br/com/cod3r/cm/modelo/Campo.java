@@ -108,6 +108,10 @@ public class Campo {
         return aberto;
     }
 
+    void setAberto(boolean aberto) {
+        this.aberto = aberto;
+    }
+
     public int getLinha() {
         return linha;
     }
