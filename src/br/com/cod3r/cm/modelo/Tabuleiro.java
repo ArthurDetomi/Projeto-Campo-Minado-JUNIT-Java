@@ -67,9 +67,9 @@ public class Tabuleiro {
         long minasArmadas = 0;
 
         do {
-            minasArmadas = campos.stream().filter(Campo::isMinado).count();
             int aleatorio = (int) (Math.random() * campos.size());
             campos.get(aleatorio).minar();
+            minasArmadas = campos.stream().filter(Campo::isMinado).count();
         } while (minasArmadas < minas);
     }
 
